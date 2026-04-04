@@ -1,5 +1,6 @@
 package agent;
 
+import jason.JasonException;
 import jason.asSemantics.Agent;
 import jason.asSemantics.Unifier;
 import jason.asSyntax.Literal;
@@ -35,7 +36,7 @@ public class UniqueBelsBB extends DefaultBeliefBase {
     }
 
     @Override
-    public boolean add(Literal bel) {
+    public boolean add(Literal bel) throws JasonException {
         Literal kb = uniqueBels.get(bel.getFunctor());
         if (kb != null && kb.getArity() == bel.getArity()) {
 
@@ -68,11 +69,7 @@ public class UniqueBelsBB extends DefaultBeliefBase {
                 remove(linbb);
             }
         }
-        try {
-            return super.add(bel);
-        } catch (Exception e) {
-            return false;
-        }
+        return super.add(bel);
     }
 
 }

@@ -1,5 +1,6 @@
 package agent;
 
+import jason.JasonException;
 import jason.asSemantics.Agent;
 import jason.asSyntax.Literal;
 import jason.bb.DefaultBeliefBase;
@@ -28,13 +29,9 @@ public class DiscardBelsBB extends DefaultBeliefBase {
     }
 
     @Override
-    public boolean add(Literal bel) {
+    public boolean add(Literal bel) throws JasonException {
         if (!discartedBels.contains(bel.getFunctor())) {
-            try {
-                return super.add(bel);
-            } catch (Exception e) {
-                return false;
-            }
+            return super.add(bel);
         } else {
             return false;
         }
