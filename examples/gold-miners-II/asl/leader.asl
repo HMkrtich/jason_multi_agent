@@ -13,10 +13,12 @@
      +quad(S,3, 0,       CellH,   W div 2 - 1, (CellH * 2)-1);
      +quad(S,4, W div 2, CellH,   W - 1,       (CellH * 2)-1);
 
-     !inform_quad(S,miner1,1);
-     !inform_quad(S,miner2,2);
-     !inform_quad(S,miner3,3);
-     !inform_quad(S,miner4,4).
+     !inform_quad(S,eminer1,1);
+     !inform_quad(S,eminer2,2);
+     !inform_quad(S,eminer3,3);
+     !inform_quad(S,eminer4,4);
+     !inform_quad(S,eminer5,1);
+     !inform_quad(S,eminer6,2).
 
 
 // only informs the quadrant if the depot is not in the quadrant

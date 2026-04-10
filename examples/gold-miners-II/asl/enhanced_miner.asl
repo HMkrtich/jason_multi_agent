@@ -28,11 +28,11 @@ search_gold_strategy(near_unvisited).
      !inform_gsize_to_leader(S);
      !choose_goal.
 
-+!inform_gsize_to_leader(S) : .my_name(miner1)
++!inform_gsize_to_leader(S) : .my_name(eminer1)
    <- ?depot(S,DX,DY);
-      .send(leader,tell,depot(S,DX,DY));
+      .send(enhanced_leader,tell,depot(S,DX,DY));
       ?gsize(S,W,H);
-      .send(leader,tell,gsize(S,W,H)).
+      .send(enhanced_leader,tell,gsize(S,W,H)).
 +!inform_gsize_to_leader(_).
 
 
