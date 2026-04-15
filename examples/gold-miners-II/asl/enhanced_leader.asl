@@ -74,7 +74,7 @@
 /* negotiation for found gold */
 
 +bid(Gold,D,Ag)
-  :  .count(bid(Gold,_,_),5)  // five bids were received
+  :  .count(bid(Gold,_,_),4)  // four bids received (was 5; avoids stalling when one miner is slow)
   <- //.print("bid from ",Ag," for ",Gold," is ",D);
      !allocate_miner(Gold);
      .abolish(bid(Gold,_,_)).

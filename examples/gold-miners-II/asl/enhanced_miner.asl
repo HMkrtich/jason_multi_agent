@@ -49,7 +49,7 @@ search_gold_strategy(near_unvisited).
      jia.path_length(AgX,AgY,DX,DY,DepotDist) &
      jia.add_fatigue(DepotDist, NG, FatigueDist) &
      AvailableSteps = TotalSteps - Step &
-     AvailableSteps < FatigueDist * 1.3
+     AvailableSteps < FatigueDist * 1.15
   <- .print("Low on time (",AvailableSteps," left, need ~",FatigueDist,"), going to depot.");
      !change_to_goto_depot.
 
@@ -159,7 +159,7 @@ worthwhile(gold(GX,GY)) :-
      // distance from gold to depot with one more gold
      jia.add_fatigue(jia.path_length(GX,GY,DX,DY),   NG+1, CostToDepot) &
      // check we have time (with some buffer)
-     AvailableSteps > (CostToGold + CostToDepot) * 1.1.
+     AvailableSteps > (CostToGold + CostToDepot) * 1.02.
 
 
 /* reacting to gold/empty percepts */
